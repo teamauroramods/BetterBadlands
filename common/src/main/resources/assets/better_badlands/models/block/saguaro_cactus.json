@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "better_badlands:block/saguaro_cactus_top",
+    "side": "better_badlands:block/saguaro_cactus_side",
+    "bottom": "better_badlands:block/saguaro_cactus_inner"
+  }
+}

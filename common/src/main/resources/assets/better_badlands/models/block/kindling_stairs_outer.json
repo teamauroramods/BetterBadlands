@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "better_badlands:block/kindling",
+        "top": "better_badlands:block/kindling",
+        "side": "better_badlands:block/kindling"
+    }
+}

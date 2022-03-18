@@ -1,0 +1,22 @@
+{
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "texture": "better_badlands:block/small_saguaro_cactus_side",
+    "top": "better_badlands:block/small_saguaro_cactus_top",
+    "particle": "better_badlands:block/small_saguaro_cactus_side"
+  },
+  "elements": [
+    {   "from": [ 4, 4, 4 ],
+      "to": [ 12, 12, 12 ],
+      "faces": {
+        "north": { "texture": "#texture" },
+        "east": { "texture": "#texture" },
+        "south": { "texture": "#texture" },
+        "west": { "texture": "#texture" },
+        "up": { "texture": "#top" },
+        "down": { "texture": "#texture" }
+      }
+    }
+  ]
+}
