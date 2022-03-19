@@ -4,6 +4,9 @@ import com.teamaurora.better_badlands.core.registry.BetterBadlandsBlocks;
 import com.teamaurora.better_badlands.core.registry.BetterBadlandsItems;
 import gg.moonflower.pollen.api.platform.Platform;
 
+/**
+ * @author ebo2022
+ */
 public class BetterBadlands {
     public static final String MOD_ID = "better_badlands";
     public static final Platform PLATFORM = Platform.builder(MOD_ID)

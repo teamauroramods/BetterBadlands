@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "terracotta_lamp",
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:lantern"
+    },
+    "#": {
+      "item": "minecraft:pink_terracotta"
+    }
+  },
+  "result": {
+    "item": "better_badlands:pink_terracotta_lamp"
+  }
+}

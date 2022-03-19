@@ -8,6 +8,9 @@ import net.minecraft.core.particles.SimpleParticleType;
 
 import java.util.function.Supplier;
 
+/**
+ * @author ebo2022
+ */
 public class BetterBadlandsParticles {
 
     public static final PollinatedRegistry<ParticleType<?>> PARTICLES = PollinatedRegistry.create(Registry.PARTICLE_TYPE, BetterBadlands.MOD_ID);

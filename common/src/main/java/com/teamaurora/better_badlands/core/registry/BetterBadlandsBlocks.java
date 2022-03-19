@@ -1,5 +1,7 @@
 package com.teamaurora.better_badlands.core.registry;
 
+import com.teamaurora.better_badlands.common.block.InvisibleLightBlock;
+import com.teamaurora.better_badlands.common.block.TerracottaLampBlock;
 import com.teamaurora.better_badlands.core.BetterBadlands;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
@@ -9,11 +11,35 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 
 import java.util.function.Supplier;
 
+/**
+ * @author ebo2022
+ */
 public class BetterBadlandsBlocks {
     public static final PollinatedRegistry<Block> BLOCKS = PollinatedRegistry.create(Registry.BLOCK, BetterBadlands.MOD_ID);
+
+    public static final Supplier<Block> INVISIBLE_LIGHT_SOURCE = registerBlockNoItem("invisible_light_source", () -> new InvisibleLightBlock(Properties.INVISIBLE_LIGHT_SOURCE));
+
+    public static final Supplier<Block> TERRACOTTA_LAMP = registerBlock("terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BLACK_TERRACOTTA_LAMP = registerBlock("black_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> RED_TERRACOTTA_LAMP = registerBlock("red_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> GREEN_TERRACOTTA_LAMP = registerBlock("green_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BROWN_TERRACOTTA_LAMP = registerBlock("brown_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BLUE_TERRACOTTA_LAMP = registerBlock("blue_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> PURPLE_TERRACOTTA_LAMP = registerBlock("purple_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> CYAN_TERRACOTTA_LAMP = registerBlock("cyan_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIGHT_GRAY_TERRACOTTA_LAMP = registerBlock("light_gray_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> GRAY_TERRACOTTA_LAMP = registerBlock("gray_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> PINK_TERRACOTTA_LAMP = registerBlock("pink_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIME_TERRACOTTA_LAMP = registerBlock("lime_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> YELLOW_TERRACOTTA_LAMP = registerBlock("yellow_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIGHT_BLUE_TERRACOTTA_LAMP = registerBlock("light_blue_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> MAGENTA_TERRACOTTA_LAMP = registerBlock("magenta_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> ORANGE_TERRACOTTA_LAMP = registerBlock("orange_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> WHITE_TERRACOTTA_LAMP = registerBlock("white_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
 
     private static Supplier<Block> registerBlock(String id, Supplier<Block> block, Item.Properties properties) {
@@ -22,6 +48,13 @@ public class BetterBadlandsBlocks {
         return register;
     }
 
+    private static Supplier<Block> registerBlockNoItem(String id, Supplier<Block> block) {
+        Supplier<Block> register = BLOCKS.register(id, block);
+        return register;
+    }
+
     public static final class Properties {
+        public static final BlockBehaviour.Properties INVISIBLE_LIGHT_SOURCE = BlockBehaviour.Properties.of(Material.AIR).lightLevel(l -> 13);
+        public static final BlockBehaviour.Properties TERRACOTTA_LAMP = BlockBehaviour.Properties.copy(Blocks.TERRACOTTA);
     }
 }

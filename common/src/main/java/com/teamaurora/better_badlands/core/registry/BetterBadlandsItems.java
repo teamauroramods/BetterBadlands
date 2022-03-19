@@ -5,6 +5,9 @@ import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 
+/**
+ * @author ebo2022
+ */
 public class BetterBadlandsItems {
     public static final PollinatedRegistry<Item> ITEMS = PollinatedRegistry.create(Registry.ITEM, BetterBadlands.MOD_ID);
 }
