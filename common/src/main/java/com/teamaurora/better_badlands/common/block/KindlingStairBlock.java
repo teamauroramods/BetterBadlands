@@ -48,7 +48,7 @@ public class KindlingStairBlock extends ThatchStairBlock implements IKindling {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BURN_DISTANCE, FACING, HALF, SHAPE, WATERLOGGED, IS_BURNED);
+        builder.add(BURN_DISTANCE, IS_BURNED, FACING, HALF, SHAPE, WATERLOGGED);
     }
 
     @Override
