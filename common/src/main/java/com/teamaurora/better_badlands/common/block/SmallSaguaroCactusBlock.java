@@ -27,6 +27,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Random;
 
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SmallSaguaroCactusBlock extends PipeBlock {
     protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
 

@@ -30,6 +30,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
+
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SaguaroCactusBlock extends Block  {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);

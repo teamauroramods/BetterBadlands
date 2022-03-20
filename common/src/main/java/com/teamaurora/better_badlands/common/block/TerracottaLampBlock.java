@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 /**
  * @author ebo2022
  */
-
 @SuppressWarnings("deprecation")
 public class TerracottaLampBlock extends Block {
     public static final DirectionProperty FACING = DirectionalBlock.FACING;

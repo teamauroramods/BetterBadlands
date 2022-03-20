@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SaguaroSproutBlock extends SaplingBlock {
     public SaguaroSproutBlock(AbstractTreeGrower tree, Properties properties) {
         super(tree, properties);
