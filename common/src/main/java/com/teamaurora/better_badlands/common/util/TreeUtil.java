@@ -49,9 +49,4 @@ public final class TreeUtil {
             level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 18);
         }
     }
-
-    public static boolean isValidGround(LevelAccessor world, BlockPos pos, SaplingBlock sapling) {
-        BlockState state = sapling.defaultBlockState();
-        return state.
-    }
 }
