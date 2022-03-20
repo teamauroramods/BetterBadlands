@@ -12,6 +12,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SaguaroFlowerItem extends BlockItem {
     public SaguaroFlowerItem(Item.Properties properties) {
         super(BetterBadlandsBlocks.SAGUARO_FLOWER.get(), properties);

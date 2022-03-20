@@ -5,6 +5,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SuccumbingEffect extends MobEffect {
     public SuccumbingEffect() {
         super(MobEffectCategory.HARMFUL, 5999141);

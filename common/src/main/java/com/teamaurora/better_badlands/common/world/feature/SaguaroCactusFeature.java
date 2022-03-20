@@ -17,6 +17,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 
 import java.util.Random;
 
+/**
+ * @author ebo2022, Exoplanetary
+ */
 public class SaguaroCactusFeature extends Feature<TreeConfiguration> {
     public SaguaroCactusFeature(Codec<TreeConfiguration> config) {
         super(config);
