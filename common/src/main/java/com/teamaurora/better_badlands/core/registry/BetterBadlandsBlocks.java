@@ -1,7 +1,6 @@
 package com.teamaurora.better_badlands.core.registry;
 
-import com.teamaurora.better_badlands.common.block.InvisibleLightBlock;
-import com.teamaurora.better_badlands.common.block.TerracottaLampBlock;
+import com.teamaurora.better_badlands.common.block.*;
 import com.teamaurora.better_badlands.core.BetterBadlands;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
@@ -10,6 +9,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
@@ -20,6 +20,11 @@ import java.util.function.Supplier;
  */
 public class BetterBadlandsBlocks {
     public static final PollinatedRegistry<Block> BLOCKS = PollinatedRegistry.create(Registry.BLOCK, BetterBadlands.MOD_ID);
+
+    public static final Supplier<Block> KINDLING = registerBlock("kindling", () -> new KindlingBlock(Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
+    public static final Supplier<Block> KINDLING_SLAB = registerBlock("kindling_slab", () -> new KindlingSlabBlock(Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
+    public static final Supplier<Block> KINDLING_STAIRS = registerBlock("kindling_stairs", () -> new KindlingStairBlock(KINDLING.get().defaultBlockState(), Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
+
 
     public static final Supplier<Block> INVISIBLE_LIGHT_SOURCE = registerBlockNoItem("invisible_light_source", () -> new InvisibleLightBlock(Properties.INVISIBLE_LIGHT_SOURCE));
 
@@ -55,6 +60,7 @@ public class BetterBadlandsBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties INVISIBLE_LIGHT_SOURCE = BlockBehaviour.Properties.of(Material.AIR).lightLevel(l -> 13);
+        public static final BlockBehaviour.Properties KINDLING = BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK).sound(SoundType.BAMBOO).noOcclusion();
         public static final BlockBehaviour.Properties TERRACOTTA_LAMP = BlockBehaviour.Properties.copy(Blocks.TERRACOTTA);
     }
 }

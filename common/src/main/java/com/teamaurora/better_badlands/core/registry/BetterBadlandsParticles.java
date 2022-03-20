@@ -5,6 +5,7 @@ import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
@@ -16,4 +17,5 @@ public class BetterBadlandsParticles {
     public static final PollinatedRegistry<ParticleType<?>> PARTICLES = PollinatedRegistry.create(Registry.PARTICLE_TYPE, BetterBadlands.MOD_ID);
 
     public static final Supplier<SimpleParticleType> TWIG = PARTICLES.register("twig", () -> new SimpleParticleType(false));
+
 }

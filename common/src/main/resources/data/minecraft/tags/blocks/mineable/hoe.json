@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"better_badlands:kindling",
+        "better_badlands:kindling_slab",
+        "better_badlands:kindling_stairs"
+	]
+}

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author ebo2022
+ * @author ebo2022, Exoplanetary
  */
 
 @SuppressWarnings("deprecation")
