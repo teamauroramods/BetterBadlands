@@ -10,6 +10,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
+import net.minecraft.world.level.block.grower.SpruceTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
@@ -46,6 +48,10 @@ public class BetterBadlandsBlocks {
     public static final Supplier<Block> ORANGE_TERRACOTTA_LAMP = registerBlock("orange_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> WHITE_TERRACOTTA_LAMP = registerBlock("white_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
+    public static final Supplier<Block> SAGUARO_CACTUS = registerBlock("saguaro_cactus", () -> new SaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> SMALL_SAGUARO_CACTUS = registerBlock("small_saguaro_cactus", () -> new SmallSaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> SAGUARO_FLOWER = registerBlockNoItem("saguaro_flower", () -> new SaguaroFlowerBlock(Properties.SAGUARO_FLOWER));
+    public static final Supplier<Block> SAGUARO_SPROUT = registerBlockNoItem("saguaro_sprout", () -> new SaguaroSproutBlock(new OakTreeGrower(), Properties.SAGUARO_SPROUT));
 
     private static Supplier<Block> registerBlock(String id, Supplier<Block> block, Item.Properties properties) {
         Supplier<Block> register = BLOCKS.register(id, block);
@@ -60,7 +66,10 @@ public class BetterBadlandsBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties INVISIBLE_LIGHT_SOURCE = BlockBehaviour.Properties.of(Material.AIR).lightLevel(l -> 13);
-        public static final BlockBehaviour.Properties KINDLING = BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK).sound(SoundType.BAMBOO).noOcclusion();
+        public static final BlockBehaviour.Properties KINDLING = BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK).noOcclusion();
         public static final BlockBehaviour.Properties TERRACOTTA_LAMP = BlockBehaviour.Properties.copy(Blocks.TERRACOTTA);
+        public static final BlockBehaviour.Properties SAGUARO_CACTUS = BlockBehaviour.Properties.copy(Blocks.CACTUS);
+        public static final BlockBehaviour.Properties SAGUARO_FLOWER = BlockBehaviour.Properties.copy(Blocks.OXEYE_DAISY).sound(SoundType.SPORE_BLOSSOM);
+        public static final BlockBehaviour.Properties SAGUARO_SPROUT = BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(SoundType.WOOL);
     }
 }
