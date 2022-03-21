@@ -30,7 +30,7 @@ public class KindlingSlabBlock extends ThatchSlabBlock implements IKindling {
 
     public KindlingSlabBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false).setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false).setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, false));
     }
 
     @Override

@@ -25,7 +25,7 @@ public class TerracottaLampBlock extends Block {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
+        return this.stateDefinition.getOwner().defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
     }
 
     @Override

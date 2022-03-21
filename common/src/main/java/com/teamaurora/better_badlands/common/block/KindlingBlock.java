@@ -25,7 +25,7 @@ public class KindlingBlock extends ThatchBlock implements IKindling {
 
     public KindlingBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false));
+        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false));
     }
     @Override
     public void onProjectileHit(Level worldIn, BlockState state, BlockHitResult hit, Projectile projectile) {

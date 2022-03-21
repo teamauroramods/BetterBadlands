@@ -35,7 +35,7 @@ public class SmallSaguaroCactusBlock extends PipeBlock {
 
     public SmallSaguaroCactusBlock(BlockBehaviour.Properties properties) {
         super(0.25F, properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(NORTH, false).setValue(SOUTH, false).setValue(EAST, false).setValue(WEST, false).setValue(UP, false).setValue(DOWN, false));
+        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(NORTH, false).setValue(SOUTH, false).setValue(EAST, false).setValue(WEST, false).setValue(UP, false).setValue(DOWN, false));
     }
 
     public boolean canConnect(Block block) {

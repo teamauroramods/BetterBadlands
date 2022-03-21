@@ -32,7 +32,7 @@ public class KindlingStairBlock extends ThatchStairBlock implements IKindling {
 
     public KindlingStairBlock(BlockState state, Properties properties) {
         super(state, properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false).setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM).setValue(SHAPE, StairsShape.STRAIGHT).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(BURN_DISTANCE, 0).setValue(IS_BURNED, false).setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM).setValue(SHAPE, StairsShape.STRAIGHT).setValue(WATERLOGGED, false));
     }
 
     @Override

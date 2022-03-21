@@ -40,7 +40,7 @@ public class SaguaroCactusBlock extends Block  {
 
     public SaguaroCactusBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(AGE, Integer.valueOf(0)));
+        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(AGE, Integer.valueOf(0)));
     }
 
     @Override
