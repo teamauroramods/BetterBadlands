@@ -24,12 +24,17 @@ public class BetterBadlands {
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
+        ctx.enqueueWork(() -> {
+            RenderTypeRegistry.register(BetterBadlandsBlocks.SAGUARO_FLOWER.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BetterBadlandsBlocks.SAGUARO_SPROUT.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BetterBadlandsBlocks.POTTED_SAGUARO_SPROUT.get(), RenderType.cutout());
+        });
     }
 
     public static void onCommonInit() {
         BetterBadlandsItems.ITEMS.register(BetterBadlands.PLATFORM);
         BetterBadlandsBlocks.BLOCKS.register(BetterBadlands.PLATFORM);
-        BetterBadlandsEffects.EFFECTS.register(BetterBadlands.PLATFORM);
+        BetterBadlandsEffects.MOB_EFFECTS.register(BetterBadlands.PLATFORM);
         BetterBadlandsEffects.POTIONS.register(BetterBadlands.PLATFORM);
     }
 

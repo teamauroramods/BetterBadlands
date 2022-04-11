@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "better_badlands:saguaro_cactus"
+  },
+  "result": "minecraft:green_dye",
+  "experience": 1.0,
+  "cookingtime": 200,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "abnormals_core:quark_flag",
+        "flag": "midori"
+      }
+    }
+  ]
+}

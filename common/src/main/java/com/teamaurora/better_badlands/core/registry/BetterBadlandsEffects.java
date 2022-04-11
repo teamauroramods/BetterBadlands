@@ -14,10 +14,10 @@ import net.minecraft.world.item.alchemy.Potions;
 import java.util.function.Supplier;
 
 public class BetterBadlandsEffects {
-    public static final PollinatedRegistry<MobEffect> EFFECTS = PollinatedRegistry.create(Registry.MOB_EFFECT, BetterBadlands.MOD_ID);
+    public static final PollinatedRegistry<MobEffect> MOB_EFFECTS = PollinatedRegistry.create(Registry.MOB_EFFECT, BetterBadlands.MOD_ID);
     public static final PollinatedRegistry<Potion> POTIONS = PollinatedRegistry.create(Registry.POTION, BetterBadlands.MOD_ID);
 
-    public static final Supplier<MobEffect> SUCCUMBING = EFFECTS.register("succumbing", SuccumbingEffect::new);
+    public static final Supplier<MobEffect> SUCCUMBING = MOB_EFFECTS.register("succumbing", SuccumbingEffect::new);
 
     public static final Supplier<Potion> SUCCUMBING_NORMAL = POTIONS.register("succumbing", () -> new Potion(new MobEffectInstance(SUCCUMBING.get(), 900)));
     public static final Supplier<Potion> SUCCUMBING_LONG = POTIONS.register("succumbing_long", () -> new Potion(new MobEffectInstance(SUCCUMBING.get(), 1800)));
