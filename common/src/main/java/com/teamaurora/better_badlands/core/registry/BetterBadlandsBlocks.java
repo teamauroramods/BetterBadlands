@@ -2,18 +2,12 @@ package com.teamaurora.better_badlands.core.registry;
 
 import com.teamaurora.better_badlands.common.block.*;
 import com.teamaurora.better_badlands.common.block.trees.SaguaroTreeGrower;
-import com.teamaurora.better_badlands.core.BetterBadlands;
 import gg.moonflower.pollen.api.registry.PollinatedBlockRegistry;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
-import net.minecraft.core.Registry;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
-import net.minecraft.world.level.block.grower.SpruceTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 import java.util.function.Supplier;
 
@@ -30,23 +24,23 @@ public class BetterBadlandsBlocks {
 
     /* Terracotta Lamps */
 
-    public static final Supplier<Block> TERRACOTTA_LAMP = BLOCKS.registerWithItem("terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> BLACK_TERRACOTTA_LAMP = BLOCKS.registerWithItem("black_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> RED_TERRACOTTA_LAMP = BLOCKS.registerWithItem("red_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> GREEN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("green_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> BROWN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("brown_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> BLUE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("blue_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> PURPLE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("purple_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> CYAN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("cyan_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> LIGHT_GRAY_TERRACOTTA_LAMP = BLOCKS.registerWithItem("light_gray_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> GRAY_TERRACOTTA_LAMP = BLOCKS.registerWithItem("gray_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> PINK_TERRACOTTA_LAMP = BLOCKS.registerWithItem("pink_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> LIME_TERRACOTTA_LAMP = BLOCKS.registerWithItem("lime_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> YELLOW_TERRACOTTA_LAMP = BLOCKS.registerWithItem("yellow_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> LIGHT_BLUE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("light_blue_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> MAGENTA_TERRACOTTA_LAMP = BLOCKS.registerWithItem("magenta_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> ORANGE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("orange_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> WHITE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("white_terracotta_lamp", () -> new RotatedPillarBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> TERRACOTTA_LAMP = BLOCKS.registerWithItem("terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BLACK_TERRACOTTA_LAMP = BLOCKS.registerWithItem("black_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> RED_TERRACOTTA_LAMP = BLOCKS.registerWithItem("red_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> GREEN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("green_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BROWN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("brown_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BLUE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("blue_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> PURPLE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("purple_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> CYAN_TERRACOTTA_LAMP = BLOCKS.registerWithItem("cyan_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIGHT_GRAY_TERRACOTTA_LAMP = BLOCKS.registerWithItem("light_gray_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> GRAY_TERRACOTTA_LAMP = BLOCKS.registerWithItem("gray_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> PINK_TERRACOTTA_LAMP = BLOCKS.registerWithItem("pink_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIME_TERRACOTTA_LAMP = BLOCKS.registerWithItem("lime_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> YELLOW_TERRACOTTA_LAMP = BLOCKS.registerWithItem("yellow_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LIGHT_BLUE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("light_blue_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> MAGENTA_TERRACOTTA_LAMP = BLOCKS.registerWithItem("magenta_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> ORANGE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("orange_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> WHITE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("white_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
     public static final Supplier<Block> SAGUARO_CACTUS = BLOCKS.registerWithItem("saguaro_cactus", () -> new SaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> SMALL_SAGUARO_CACTUS = BLOCKS.registerWithItem("small_saguaro_cactus", () -> new SmallSaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
