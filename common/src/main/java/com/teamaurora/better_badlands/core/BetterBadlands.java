@@ -3,6 +3,8 @@ package com.teamaurora.better_badlands.core;
 import com.teamaurora.better_badlands.core.registry.BetterBadlandsBlocks;
 import com.teamaurora.better_badlands.core.registry.BetterBadlandsEffects;
 import com.teamaurora.better_badlands.core.registry.BetterBadlandsItems;
+import gg.moonflower.pollen.api.config.ConfigManager;
+import gg.moonflower.pollen.api.config.PollinatedConfigType;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
 import net.minecraft.client.renderer.RenderType;
@@ -12,6 +14,8 @@ import net.minecraft.client.renderer.RenderType;
  */
 public class BetterBadlands {
     public static final String MOD_ID = "better_badlands";
+    public static final BetterBadlandsCommonConfig CONFIG = ConfigManager.register(MOD_ID, PollinatedConfigType.COMMON, BetterBadlandsCommonConfig::new);
+
     public static final Platform PLATFORM = Platform.builder(MOD_ID)
             .clientInit(BetterBadlands::onClientInit)
             .clientPostInit(BetterBadlands::onClientPostInit)
