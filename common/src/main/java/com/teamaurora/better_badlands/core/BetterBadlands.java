@@ -9,6 +9,7 @@ import gg.moonflower.pollen.api.config.PollinatedConfigType;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * @author ebo2022
@@ -37,5 +38,9 @@ public class BetterBadlands {
         BetterBadlandsEffects.load(PLATFORM);
         BetterBadlandsFeatures.load(PLATFORM);
         BetterBadlandsFeatures.Configured.load(PLATFORM);
+    }
+
+    public static ResourceLocation location(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 }
