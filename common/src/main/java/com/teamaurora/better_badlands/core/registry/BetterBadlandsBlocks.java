@@ -2,19 +2,28 @@ package com.teamaurora.better_badlands.core.registry;
 
 import com.teamaurora.better_badlands.common.block.*;
 import com.teamaurora.better_badlands.common.block.trees.SaguaroTreeGrower;
+import com.teamaurora.better_badlands.common.item.SaguaroFlowerItem;
+import com.teamaurora.better_badlands.common.item.TabInsertBlockItem;
+import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.PollinatedBlockRegistry;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
  * @author ebo2022
  */
 public class BetterBadlandsBlocks {
+
+    private static final Logger LOGGER = LogManager.getLogger();
     public static final PollinatedBlockRegistry BLOCKS = PollinatedRegistry.createBlock(BetterBadlandsItems.ITEMS);
 
     public static final Supplier<Block> KINDLING = BLOCKS.registerWithItem("kindling", () -> new KindlingBlock(Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
@@ -42,15 +51,23 @@ public class BetterBadlandsBlocks {
     public static final Supplier<Block> ORANGE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("orange_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> WHITE_TERRACOTTA_LAMP = BLOCKS.registerWithItem("white_terracotta_lamp", () -> new TerracottaLampBlock(Properties.TERRACOTTA_LAMP), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
-    public static final Supplier<Block> SAGUARO_CACTUS = BLOCKS.registerWithItem("saguaro_cactus", () -> new SaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> SMALL_SAGUARO_CACTUS = BLOCKS.registerWithItem("small_saguaro_cactus", () -> new SmallSaguaroCactusBlock(Properties.SAGUARO_CACTUS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> SAGUARO_FLOWER = BLOCKS.register("saguaro_flower", () -> new SaguaroFlowerBlock(Properties.SAGUARO_FLOWER));
+    public static final Supplier<Block> SAGUARO_CACTUS = BLOCKS.registerWithItem("saguaro_cactus", () -> new SaguaroCactusBlock(Properties.SAGUARO_CACTUS), followItem(Items.CACTUS, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> SMALL_SAGUARO_CACTUS = BLOCKS.registerWithItem("small_saguaro_cactus", () -> new SmallSaguaroCactusBlock(Properties.SAGUARO_CACTUS), followItem(Items.CACTUS, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> SAGUARO_FLOWER = BLOCKS.registerWithItem("saguaro_flower", () -> new SaguaroFlowerBlock(Properties.SAGUARO_FLOWER), block -> new SaguaroFlowerItem(block, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final Supplier<Block> SAGUARO_SPROUT = BLOCKS.register("saguaro_sprout", () -> new SaguaroSproutBlock(new SaguaroTreeGrower(), Properties.SAGUARO_SPROUT));
-    public static final Supplier<Block> POTTED_SAGUARO_SPROUT = registerPotted("potted_saguaro_sprout", SAGUARO_SPROUT);
+    public static final Supplier<Block> POTTED_SAGUARO_SPROUT = BLOCKS.register("potted_saguaro_sprout", createFlowerPot(SAGUARO_SPROUT));
 
-    private static Supplier<Block> registerPotted(String id, Supplier<Block> block) {
-        Supplier<Block> register = BLOCKS.register(id, () -> new FlowerPotBlock(block.get(), Properties.POTTED_PLANT));
-        return register;
+    private static Supplier<Block> createFlowerPot(Supplier<Block> block) {
+        return () -> new FlowerPotBlock(block.get(), Properties.POTTED_PLANT);
+    }
+
+    private static Function<Block, Item> followItem(Item insertAfter, Item.Properties properties) {
+        return object -> new TabInsertBlockItem(insertAfter, object, properties);
+    }
+
+    public static void load(Platform platform) {
+        LOGGER.debug("Registered to platform");
+        BLOCKS.register(platform);
     }
 
     public static final class Properties {

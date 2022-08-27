@@ -28,11 +28,6 @@ public class SaguaroFlowerBlock extends BushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter worldIn, BlockPos pos, BlockState state) {
-        return new ItemStack(BetterBadlandsItems.SAGUARO_FLOWER.get());
-    }
-
-    @Override
     public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
         Block below = worldIn.getBlockState(pos.below()).getBlock();
         return below == BetterBadlandsBlocks.SAGUARO_CACTUS.get() || below == BetterBadlandsBlocks.SMALL_SAGUARO_CACTUS.get();

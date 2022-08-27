@@ -34,13 +34,14 @@ import java.util.Random;
 /**
  * @author ebo2022, Exoplanetary
  */
+@SuppressWarnings("deprecation")
 public class SaguaroCactusBlock extends Block  {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
 
     public SaguaroCactusBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().getOwner().defaultBlockState().setValue(AGE, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
     @Override
@@ -49,7 +50,6 @@ public class SaguaroCactusBlock extends Block  {
         if (!state.canSurvive(worldIn, pos)) {
             worldIn.destroyBlock(pos, true);
         }
-
     }
 
     @Override

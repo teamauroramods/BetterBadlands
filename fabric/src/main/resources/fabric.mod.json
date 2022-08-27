@@ -18,14 +18,11 @@
   "entrypoints": {
     "main": [
       "com.teamaurora.better_badlands.core.fabric.BetterBadlandsFabric"
-    ],
-    "fabric-datagen": [
-      "com.teamaurora.better_badlands.core.fabric.BetterBadlandsFabricDatagen"
     ]
   },
   "depends": {
     "fabric": "*",
-    "minecraft": "1.18.1",
-    "pollen": ">=1.2.0 <2.0.0"
+    "minecraft": "1.18.2",
+    "pollen": ">=1.4.9 <2.0.0"
   }
 }

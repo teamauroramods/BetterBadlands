@@ -16,8 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * @author ebo2022, Exoplanetary
  */
 public class SaguaroFlowerItem extends BlockItem {
-    public SaguaroFlowerItem(Item.Properties properties) {
-        super(BetterBadlandsBlocks.SAGUARO_FLOWER.get(), properties);
+    public SaguaroFlowerItem(Block block, Item.Properties properties) {
+        super(block, properties);
     }
 
     @Nullable

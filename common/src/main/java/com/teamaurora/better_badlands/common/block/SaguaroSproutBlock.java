@@ -1,5 +1,6 @@
 package com.teamaurora.better_badlands.common.block;
 
+import com.teamaurora.better_badlands.core.registry.BetterBadlandsBlocks;
 import com.teamaurora.better_badlands.core.registry.BetterBadlandsItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
@@ -20,7 +21,7 @@ public class SaguaroSproutBlock extends SaplingBlock {
     }
 
     public ItemStack getItem(BlockGetter worldIn, BlockPos pos, BlockState state) {
-        return new ItemStack(BetterBadlandsItems.SAGUARO_FLOWER.get());
+        return new ItemStack(BetterBadlandsBlocks.SAGUARO_FLOWER.get().asItem());
     }
 
     @Override
