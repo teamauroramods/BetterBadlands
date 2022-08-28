@@ -1,9 +1,7 @@
 package com.teamaurora.better_badlands.core;
 
-import com.teamaurora.better_badlands.core.registry.BetterBadlandsBlocks;
-import com.teamaurora.better_badlands.core.registry.BetterBadlandsEffects;
-import com.teamaurora.better_badlands.core.registry.BetterBadlandsFeatures;
-import com.teamaurora.better_badlands.core.registry.BetterBadlandsItems;
+import com.teamaurora.better_badlands.api.KindlingTickerManager;
+import com.teamaurora.better_badlands.core.registry.*;
 import gg.moonflower.pollen.api.config.ConfigManager;
 import gg.moonflower.pollen.api.config.PollinatedConfigType;
 import gg.moonflower.pollen.api.platform.Platform;
@@ -21,9 +19,11 @@ public class BetterBadlands {
             .clientInit(() -> BetterBadlands::onClientInit)
             .clientPostInit(() -> BetterBadlands::onClientPostInit)
             .commonInit(BetterBadlands::onCommonInit)
+            .commonPostInit(BetterBadlands::commonPostInit)
             .build();
 
     public static void onClientInit() {
+        BetterBadlandsParticles.setupClient();
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
@@ -36,8 +36,13 @@ public class BetterBadlands {
         BetterBadlandsBlocks.load(PLATFORM);
         BetterBadlandsItems.load(PLATFORM);
         BetterBadlandsEffects.load(PLATFORM);
+        BetterBadlandsParticles.load(PLATFORM);
         BetterBadlandsFeatures.load(PLATFORM);
         BetterBadlandsFeatures.Configured.load(PLATFORM);
+    }
+
+    public static void commonPostInit(Platform.ModSetupContext ctx) {
+        ctx.enqueueWork(KindlingTickerManager.INSTANCE::init);
     }
 
     public static ResourceLocation location(String path) {

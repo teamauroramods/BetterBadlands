@@ -1,5 +1,8 @@
 package com.teamaurora.better_badlands.core.registry;
 
+import com.teamaurora.better_badlands.api.KindlingBlock;
+import com.teamaurora.better_badlands.api.KindlingSlabBlock;
+import com.teamaurora.better_badlands.api.KindlingStairBlock;
 import com.teamaurora.better_badlands.common.block.*;
 import com.teamaurora.better_badlands.common.block.trees.SaguaroTreeGrower;
 import com.teamaurora.better_badlands.common.item.SaguaroFlowerItem;
@@ -25,6 +28,10 @@ public class BetterBadlandsBlocks {
 
     private static final Logger LOGGER = LogManager.getLogger();
     public static final PollinatedBlockRegistry BLOCKS = PollinatedRegistry.createBlock(BetterBadlandsItems.ITEMS);
+
+    public static final Supplier<Block> KINDLING = BLOCKS.registerWithItem("kindling", () -> new KindlingBlock(Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
+    public static final Supplier<Block> KINDLING_SLAB = BLOCKS.registerWithItem("kindling_slab", () -> new KindlingSlabBlock(Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
+    public static final Supplier<Block> KINDLING_STAIRS = BLOCKS.registerWithItem("kindling_stairs", () -> new KindlingStairBlock(KINDLING.get().defaultBlockState(), Properties.KINDLING), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
 
 
     /* Terracotta Lamps */

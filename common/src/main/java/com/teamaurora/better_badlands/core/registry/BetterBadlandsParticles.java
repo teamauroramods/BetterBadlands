@@ -1,6 +1,8 @@
 package com.teamaurora.better_badlands.core.registry;
 
+import com.teamaurora.better_badlands.client.particle.TwigParticle;
 import com.teamaurora.better_badlands.core.BetterBadlands;
+import gg.moonflower.pollen.api.event.events.registry.client.ParticleFactoryRegistryEvent;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
@@ -21,6 +23,10 @@ public class BetterBadlandsParticles {
     public static final PollinatedRegistry<ParticleType<?>> PARTICLES = PollinatedRegistry.create(Registry.PARTICLE_TYPE, BetterBadlands.MOD_ID);
 
     public static final Supplier<SimpleParticleType> TWIG = PARTICLES.register("twig", () -> new SimpleParticleType(false));
+
+    public static void setupClient() {
+        ParticleFactoryRegistryEvent.EVENT.register(registry -> registry.register(TWIG.get(), TwigParticle.Provider::new));
+    }
 
     public static void load(Platform platform) {
         LOGGER.debug("Registered to platform");
